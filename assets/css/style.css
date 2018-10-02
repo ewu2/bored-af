@@ -5,23 +5,26 @@
 h1 {
     color: white;
 }
-.btn{
+
+.btn {
     margin-top: 8px;
     margin: 0 auto;
 }
-.box{
+.box {
     padding: 40px;
     height: 400px;
     background: gray;
 }
-#page-2{
+
+#page-2 {
     display: none;
 }
 
-.box-1, .box-2, .box-3{
+.box-1, .box-2, .box-3 {
     display: none;
 }
-.backarrow{
+
+.backarrow {
     visibility: hidden;
     float: left;
     color: #fff;
@@ -29,10 +32,12 @@ h1 {
     font-size: 30px;
     transition-delay: .1s;
 }
-.backarrow:hover{
+
+.backarrow:hover {
     background:#b8b4b2;
     color: black;
 }
-.display-3{
+
+.display-3 {
     clear: both;
 }
