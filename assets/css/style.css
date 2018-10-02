@@ -5,3 +5,19 @@
 h1 {
     color: white;
 }
+
+.left-arrow {
+    color: white;
+    font-size: 30px;
+    float: left;
+    background: none;
+    transition-delay: .1s;
+}
+
+.left-arrow:hover {
+    color: #b8b4b2;
+}
+
+.display-3 {
+    clear: both;
+}
