@@ -67,6 +67,15 @@ h1 {
     text-decoration: none;
 }
 
+.backarrow-hidden {
+    visibility: hidden;
+    float: left;
+    color: #fff;
+    background: none;
+    font-size: 30px;
+    transition-delay: .1s;
+}
+
 .display-3 {
     clear: both;
 }
