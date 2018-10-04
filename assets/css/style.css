@@ -70,3 +70,7 @@ h1 {
 .display-3 {
     clear: both;
 }
+
+.title-link:hover {
+    text-decoration: none;
+}
