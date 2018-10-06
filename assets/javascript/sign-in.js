@@ -28,7 +28,7 @@ var config = {
 firebase.initializeApp(config);
 
 var uiConfig = {
-    signInSuccessUrl: "./index.html", // Assuming you are running on your local machine
+    signInSuccessUrl: "https://ewu2.github.io/bored-af/page-1.html", // Assuming you are running on your local machine
     signInOptions: [
         {
             provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
