@@ -54,6 +54,10 @@ h1 {
     display: none;
 }
 
+.out-box-1, .out-box-2, .out-box-3, .out-box-4, .out-box-5, .out-box-6 {
+    display: none;
+}
+
 .backarrow {
     float: left;
     color: #fff;
