@@ -248,3 +248,14 @@ h1 {
     text-decoration: none;
 }
 
+.search-bar {
+    margin-top: 100px;
+}
+
+.form-control {
+    display: none;
+}
+
+.search-btn{
+    display: none;
+}
