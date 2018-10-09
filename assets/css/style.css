@@ -180,10 +180,12 @@ h1 {
 
 .fas-in:hover {
     color: #b8b4b2;
+    transition-delay: .1s;
 }
 
 .fas-out:hover {
     color: rgba(0, 0, 0, 0.74);
+    transition-delay: .1s;
 }
 
 .row-2 {
