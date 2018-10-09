@@ -9,6 +9,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
         integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <style>
         /* Always set the map height explicitly to define the size of the div
@@ -36,8 +37,18 @@
 
     </div>
     <button id="myLocation" type="myLocation" class="btn btn-primary btn-block">What's near me!</button>
-    <button id="inputLocation" type="inputLocation" class="btn btn-primary btn-block">Somewhere else!</button>
+    <!-- <button id="inputLocation" type="inputLocation" class="btn btn-primary btn-block">Somewhere else!</button> -->
 
+    <div >
+<!-- class="container" -->
+
+        <h2 id="text-center">Enter Location: </h2>
+        <form id="location-form">
+            <input type="text" id="location-input" class="form-control form-control-lg">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Somewhere else!</button>
+        </form>
+    </div>
 
     <div id="map">
 
@@ -45,30 +56,39 @@
     </div>
 
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfG1vPdTXk7PqpPHX5CZC45IogFeJAHc0&libraries=places">    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfG1vPdTXk7PqpPHX5CZC45IogFeJAHc0&libraries=places">
+
+
+
+
+
+
+
+    </script>
     <script>
+        //////////Use my location part
         var map;
         var infoWindow;
         var pos;
 
 
-       
+
 
         // Note: This example requires that you consent to location sharing when
         // prompted by your browser. If you see the error "The Geolocation service
         // failed.", it means you probably did not give permission for the browser to
         // locate you.
 
-////  type input zone start
-         var type_;
+        ////  type input zone start
+        var type_;
 
-$("#btnFood").on("click", function () { type_ = 'restaurant'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
-$("#btnCloth").on("click", function () { type_ = 'clothing_store'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
-$("#btnHotel").on("click", function () { type_ = 'lodging'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
-$("#btnMass").on("click", function () { type_ = 'subway_station'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
-$("#btnBar").on("click", function () { type_ = 'bar'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
+        $("#btnFood").on("click", function () { type_ = 'restaurant'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
+        $("#btnCloth").on("click", function () { type_ = 'clothing_store'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
+        $("#btnHotel").on("click", function () { type_ = 'lodging'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
+        $("#btnMass").on("click", function () { type_ = 'subway_station'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
+        $("#btnBar").on("click", function () { type_ = 'bar'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
 
-////// type input zone end
+        ////// type input zone end
 
         $("#map").css({ 'width': '1000px', 'height': '600px' });
         $("#myLocation").on("click", function () {
@@ -86,7 +106,7 @@ $("#btnBar").on("click", function () { type_ = 'bar'; console.log("type_:" + typ
                 // Try HTML5 geolocation.
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function (position) {
-                         pos = {
+                        pos = {
                             lat: position.coords.latitude,
                             lng: position.coords.longitude
                         };
@@ -96,40 +116,40 @@ $("#btnBar").on("click", function () { type_ = 'bar'; console.log("type_:" + typ
                         infoWindow.open(map);
                         map.setCenter(pos);
 
-                    /// places insertion start
+                        /// places insertion start
 
-                   
-                   infowindow2 = new google.maps.InfoWindow();
+
+                        infowindow2 = new google.maps.InfoWindow();
                         var service = new google.maps.places.PlacesService(map);
                         service.nearbySearch({
                             location: pos,
                             radius: 1000,
                             type: localStorage.getItem("type_")
                         }, callback);
-                    // }
+                        // }
 
 
-                    function callback(results, status) {
-                        if (status === google.maps.places.PlacesServiceStatus.OK) {
-                            for (var i = 0; i < results.length; i++) {
-                                createMarker(results[i]);
+                        function callback(results, status) {
+                            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                                for (var i = 0; i < results.length; i++) {
+                                    createMarker(results[i]);
+                                }
                             }
                         }
-                    }
 
-                    function createMarker(place) {
-                        var placeLoc = place.geometry.location;
-                        var marker = new google.maps.Marker({
-                            map: map,
-                            position: place.geometry.location
-                        });
+                        function createMarker(place) {
+                            var placeLoc = place.geometry.location;
+                            var marker = new google.maps.Marker({
+                                map: map,
+                                position: place.geometry.location
+                            });
 
-                        google.maps.event.addListener(marker, 'click', function () {
-                            infowindow2.setContent(place.name);
-                            infowindow2.open(map, this);
-                        });
-                    }
-                    /// places insertion end
+                            google.maps.event.addListener(marker, 'click', function () {
+                                infowindow2.setContent(place.name);
+                                infowindow2.open(map, this);
+                            });
+                        }
+                        /// places insertion end
 
 
                     }, function () {
@@ -150,6 +170,127 @@ $("#btnBar").on("click", function () { type_ = 'bar'; console.log("type_:" + typ
                 infoWindow.open(map);
             }
         });
+
+
+        /////////////////Input location part
+
+        // Get location form
+        var locationForm = document.getElementById('location-form');
+        var lat1;
+        var lng1;
+        // Listen for submit
+        locationForm.addEventListener('submit', geocode);
+        // console.log(geocode);
+        function geocode(e) {
+            // Prevent actual submit
+            e.preventDefault();
+
+            var location = document.getElementById('location-input').value;
+            console.log(location);
+            axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+                params: {
+                    address: location,
+                    key: 'AIzaSyB_Ysiwo120-OhLQWl94a8kFJ6bMZ8ikW8'
+                }
+            })
+                .then(function (response) {
+                    // Log full response
+                    console.log(response);
+
+                    // Formatted Address
+    //                 var formattedAddress = response.data.results[0].formatted_address;
+    //                 var formattedAddressOutput = `
+    //   <ul class="list-group">
+    //     <li class="list-group-item">${formattedAddress}</li>
+    //   </ul>
+    // `;
+
+                    // Address Components
+    //                 var addressComponents = response.data.results[0].address_components;
+    //                 var addressComponentsOutput = '<ul class="list-group">';
+    //                 for (var i = 0; i < addressComponents.length; i++) {
+    //                     addressComponentsOutput += `
+    //     <li class="list-group-item"><strong>${addressComponents[i].types[0]}</strong>: ${addressComponents[i].long_name}</li>
+    //   `;
+    //                 }
+    //                 addressComponentsOutput += '</ul>';
+
+                    // Geometry
+                    lat1 = response.data.results[0].geometry.location.lat;
+                    lng1 = response.data.results[0].geometry.location.lng;
+    //                 var geometryOutput = `
+    //   <ul class="list-group">
+    //     <li class="list-group-item"><strong>Latitude</strong>: ${lat1}</li>
+    //     <li class="list-group-item"><strong>Longitude</strong>: ${lng1}</li>
+    //   </ul>
+    // `;
+    initMap();
+
+                    // Output to app
+                    // document.getElementById('formatted-address').innerHTML = formattedAddressOutput;
+                    // document.getElementById('address-components').innerHTML = addressComponentsOutput;
+                    // document.getElementById('geometry').innerHTML = geometryOutput;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
+            ////same code from my location with some adaptation
+           
+            function initMap() {
+
+         
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: { lat: 38.5727353, lng: -121.4690627 },
+                    zoom: 17
+                });
+                infoWindow = new google.maps.InfoWindow;
+                // console.log('this is lat' + lat2);
+                pos = {
+                    lat: lat1,
+                    lng: lng1
+                };
+
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('So~ You like here!');
+                infoWindow.open(map);
+                map.setCenter(pos);
+                /// places insertion start
+
+
+                        infowindow2 = new google.maps.InfoWindow();
+                        var service = new google.maps.places.PlacesService(map);
+                        service.nearbySearch({
+                            location: pos,
+                            radius: 1000,
+                            type: localStorage.getItem("type_")
+                        }, callback);
+                        // }
+
+
+                        function callback(results, status) {
+                            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                                for (var i = 0; i < results.length; i++) {
+                                    createMarker(results[i]);
+                                }
+                            }
+                        }
+
+                        function createMarker(place) {
+                            var placeLoc = place.geometry.location;
+                            var marker = new google.maps.Marker({
+                                map: map,
+                                position: place.geometry.location
+                            });
+
+                            google.maps.event.addListener(marker, 'click', function () {
+                                infowindow2.setContent(place.name);
+                                infowindow2.open(map, this);
+                            });
+                        }
+                        /// places insertion end
+            }
+        }
     </script>
 
 
