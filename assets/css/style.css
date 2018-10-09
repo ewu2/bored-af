@@ -215,4 +215,36 @@ h1 {
 .in-box-2, 
 .in-box-3 {
     display: none;
+
 }
+
+.backarrow {
+    float: left;
+    color: #fff;
+    background: none;
+    font-size: 30px;
+    transition-delay: .1s;
+}
+
+.backarrow:hover {
+    color: #b8b4b2;
+    text-decoration: none;
+}
+
+.backarrow-hidden {
+    visibility: hidden;
+    float: left;
+    color: #fff;
+    background: none;
+    font-size: 30px;
+    transition-delay: .1s;
+}
+
+.display-3 {
+    clear: both;
+}
+
+.title-link:hover {
+    text-decoration: none;
+}
+
