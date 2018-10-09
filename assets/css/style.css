@@ -31,19 +31,44 @@ h1 {
     width: 100%;
 } */
 
+.login-content {
+    display: none;
+}
+
+.bored-button {
+    display: none;
+}
+
+.input-form {
+    display: none;
+}
+
+.choice-header {
+    margin-bottom: 0;
+}
+
 .choice-content {
     width: 85%;
 }
 
-.choice-box {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    padding: 90px;
-    padding-left: 105px;
-    padding-bottom: 130px;
-    height: 175px;
-    background: rgba(0, 0, 0, 0.89);
+.choice-col {
+    padding: 0;
+}
+
+.outdoor-choice-box {
+    padding: 160px;
+    background: rgba(177, 172, 172, 0.89);
     width: 100%;
+    height: 100vh;
+    display: none;
+}
+
+.indoor-choice-box {
+    padding: 160px;
+    background: rgba(0, 0, 0, 0.74);
+    width: 100%;
+    height: 100vh;
+    display: none;
 }
 
 .indoor-tag,
@@ -61,12 +86,9 @@ h1 {
 .box-6, 
 .box-7, 
 .box-8,
-.out-box-1, 
-.out-box-2, 
-.out-box-3, 
-.out-box-4, 
-.out-box-5, 
-.out-box-6 {
+.in-box-1, 
+.in-box-2, 
+.in-box-3 {
     padding: 90px;
     padding-left: 105px;
     padding-bottom: 130px;
@@ -106,12 +128,9 @@ h1 {
     display: none;
 }
 
-.out-box-1, 
-.out-box-2, 
-.out-box-3, 
-.out-box-4, 
-.out-box-5, 
-.out-box-6 {
+.in-box-1, 
+.in-box-2, 
+.in-box-3 {
     display: none;
 }
 
