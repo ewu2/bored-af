@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+</head>
+
+<body>
+
+    <div id="category">
+        <button id="btnFood">Restaurant</button>
+        <button id="btnCloth">Shopping!</button>
+        <button id="btnHotel">Living</button>
+        <button id="btnMass">Supway?</button>
+        <button id="btnBar">Just get drunk~</button>
+
+    </div>
+    <button id="myLocation" type="myLocation" class="btn btn-primary btn-block">What's near me!</button>
+    <button id="inputLocation" type="inputLocation" class="btn btn-primary btn-block">Somewhere else!</button>
+
+
+    <div id="map">
+
+
+    </div>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfG1vPdTXk7PqpPHX5CZC45IogFeJAHc0&libraries=places">    </script>
+    <script>
+        var map;
+        var infoWindow;
+        var pos;
+
+
+       
+
+        // Note: This example requires that you consent to location sharing when
+        // prompted by your browser. If you see the error "The Geolocation service
+        // failed.", it means you probably did not give permission for the browser to
+        // locate you.
+
+////  type input zone start
+         var type_;
+
+$("#btnFood").on("click", function () { type_ = 'restaurant'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
+$("#btnCloth").on("click", function () { type_ = 'clothing_store'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
+$("#btnHotel").on("click", function () { type_ = 'lodging'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
+$("#btnMass").on("click", function () { type_ = 'subway_station'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
+$("#btnBar").on("click", function () { type_ = 'bar'; console.log("type_:" + type_); localStorage.setItem("type_", type_); });
+
+////// type input zone end
+
+        $("#map").css({ 'width': '1000px', 'height': '600px' });
+        $("#myLocation").on("click", function () {
+            initMap();
+            function initMap() {
+
+
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: { lat: 38.5727353, lng: -121.4690627 },
+                    zoom: 17
+                });
+                infoWindow = new google.maps.InfoWindow;
+
+
+                // Try HTML5 geolocation.
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                         pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+
+                        infoWindow.setPosition(pos);
+                        infoWindow.setContent('So~ You are here!');
+                        infoWindow.open(map);
+                        map.setCenter(pos);
+
+                    /// places insertion start
+
+                   
+                   infowindow2 = new google.maps.InfoWindow();
+                        var service = new google.maps.places.PlacesService(map);
+                        service.nearbySearch({
+                            location: pos,
+                            radius: 1000,
+                            type: localStorage.getItem("type_")
+                        }, callback);
+                    // }
+
+
+                    function callback(results, status) {
+                        if (status === google.maps.places.PlacesServiceStatus.OK) {
+                            for (var i = 0; i < results.length; i++) {
+                                createMarker(results[i]);
+                            }
+                        }
+                    }
+
+                    function createMarker(place) {
+                        var placeLoc = place.geometry.location;
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: place.geometry.location
+                        });
+
+                        google.maps.event.addListener(marker, 'click', function () {
+                            infowindow2.setContent(place.name);
+                            infowindow2.open(map, this);
+                        });
+                    }
+                    /// places insertion end
+
+
+                    }, function () {
+                        handleLocationError(true, infoWindow, map.getCenter());
+                    });
+
+                } else {
+                    // Browser doesn't support Geolocation
+                    handleLocationError(false, infoWindow, map.getCenter());
+                }
+            }
+
+            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                infoWindow.setPosition(pos);
+                infoWindow.setContent(browserHasGeolocation ?
+                    'Dude, just chill!' :
+                    'Error: Your browser doesn\'t support geolocation.');
+                infoWindow.open(map);
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
