@@ -163,3 +163,30 @@ h1 {
 .title-link:hover {
     text-decoration: none;
 }
+
+#container-4{
+    margin: auto;
+}
+.card{
+    height: 400px;
+    width:250px;
+    background-color: grey;
+
+}
+.primary{
+    margin: 20px 30px 10px 10px;
+}
+
+#page-4{
+    margin: 10px 10px 5px 5px;
+}
+.btn-lg{
+    margin-left: 40%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.card-text{
+    margin: auto;
+
+}
