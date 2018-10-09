@@ -14,17 +14,23 @@ $(document).ready(function () {
     $('.indoor-choice-box').fadeIn(3000);
 
     //fading in elements of indoor page
-    $('.box-1').fadeIn();
-    $('.box-2').fadeIn(1000);
+    $('.box-1').fadeIn(2000);
+    $('.box-2').fadeIn(2000);
     $('.box-3').fadeIn(2000);
     $('.box-4').fadeIn(2000);
-    $('.box-5').fadeIn(1000);
-    $('.box-6').fadeIn();
+    $('.box-5').fadeIn(2000);
+    $('.box-6').fadeIn(2000);
 
     //fading in elements of outdoor page
-    $('.in-box-1').fadeIn(1000);
-    $('.in-box-2').fadeIn(2000);
+    $('.in-box-1').fadeIn(3000);
+    $('.in-box-2').fadeIn(3000);
     $('.in-box-3').fadeIn(3000);
+
+    //fade in search bar
+    $('.form-control').fadeIn(3000);
+    $('.search-btn').fadeIn(3000);
+
+
 
     
 })
