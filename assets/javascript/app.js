@@ -1,13 +1,36 @@
 $(document).ready(function () {
 
+    //fade in login
+    $('.login-content').fadeIn(1000);
 
-    $('#next-page').on('click', function () {
-        $('#page-1').css('display', "none");
-        //this will display the arrow so we can go back
-        $('.backarrow').css('visibility', 'visible');
-        $('#page-2').css('display', 'block');
-        $('.box-1').fadeIn();
-        $('.box-2').fadeIn(1000);
-        $('.box-3').fadeIn(2000);
-    })
+    //fade in bored button page
+    $('.bored-button').fadeIn(1000);
+
+    //fading in elements of search page
+    $('.input-form').fadeIn(1000);
+
+    //fading in elements of category choice page
+    $('.outdoor-choice-box').fadeIn(2000);
+    $('.indoor-choice-box').fadeIn(3000);
+
+    //fading in elements of indoor page
+    $('.box-1').fadeIn(2000);
+    $('.box-2').fadeIn(2000);
+    $('.box-3').fadeIn(2000);
+    $('.box-4').fadeIn(2000);
+    $('.box-5').fadeIn(2000);
+    $('.box-6').fadeIn(2000);
+
+    //fading in elements of outdoor page
+    $('.in-box-1').fadeIn(3000);
+    $('.in-box-2').fadeIn(3000);
+    $('.in-box-3').fadeIn(3000);
+
+    //fade in search bar
+    $('.form-control').fadeIn(3000);
+    $('.search-btn').fadeIn(3000);
+
+
+
+    
 })

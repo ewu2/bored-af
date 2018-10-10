@@ -71,9 +71,6 @@ $(document).ready(function () {
             'Dude, just chill!' :
             'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
-    }
-
-
 
     //////////Use my location part
     var map;
@@ -205,5 +202,6 @@ $(document).ready(function () {
 
 
 })
+
 
 
