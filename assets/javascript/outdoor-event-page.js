@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
     mapboxgl.accessToken = 'pk.eyJ1IjoiZ29uemFsb24zMTQwIiwiYSI6ImNqbW53b2RsMDBmN3YzcHFvemVqMjcwMWgifQ.uSJyJkrDOWjV8xfUcaREtA';
-
+    var photoResponse = [];
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
@@ -66,6 +66,23 @@ $(document).ready(function () {
         console.log('test');
     })
 
+    function getPhotos() {
+        var currentSearch = localStorage.getItem('Selection');
+        var queryUrl = 'https://api.unsplash.com/search/photos/?page=1&per_page=15&query=${' + currentSearch + '}&client_id=93d09a8e266e8e581415b2760c6d3fdbbf963d9885a32aab642cc31d23a58ea0';
+
+        $.ajax({
+            url: queryUrl,
+            type: 'GET',
+
+
+        }).then(function (response) {
+            for (var i = 0; i < response.results.length; i++) {
+                photoResponse[i] = response.results[i];
+            }
+        })
+    }
+
+    getPhotos();
 
     displaySearch();
     var rowCount = 0;
@@ -85,15 +102,16 @@ $(document).ready(function () {
 
             "date": "Today",
 
-            page_size: 50,
+            page_size: 15,
 
             sort_order: "popularity",
 
         };
 
         EVDB.API.call("/events/search", oArgs, function (oData) {
-            console.log(oData);
+
             for (var i = 0; i < oData.events.event.length; i++) {
+
 
                 if (isFirst) {
                     rowCount++;
@@ -123,7 +141,7 @@ $(document).ready(function () {
 
                 var newImage = $('<img>');
                 newImage.addClass('card-img-top');
-                newImage.attr('src', 'assets/images/orurorororo.jpg');
+                newImage.attr('src', photoResponse[i].urls.small);
 
                 var cardBody = $('<div>');
                 cardBody.addClass('card-body');
