@@ -1,8 +1,6 @@
 /* fonts */
-@font-face {font-family: "FrederickatheGreat"; src: url('../fonts/FrederickatheGreat-Regular.ttf');}
 @font-face {font-family: "Caveat"; src: url('../fonts/Caveat-Regular.ttf');}
 @font-face {font-family: "Comfortaa"; src: url('../fonts/Comfortaa-Regular.ttf');}
-@font-face {font-family: "CabinSketch"; src: url('../fonts/CabinSketch-Regular.ttf');}
 @font-face {font-family: "BrownhillScript"; src: url('../fonts/Brownhill-Script.ttf');}
 
 /* nav bar and header area */
