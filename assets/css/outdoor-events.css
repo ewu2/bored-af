@@ -13,3 +13,10 @@
 #adjust-text{
     overflow: scroll;
 }
+#show-map{
+    margin-top: 10px;
+}
+body{
+    background:
+    rgba(177, 172, 172, 0.89);
+}
