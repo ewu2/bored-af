@@ -9,3 +9,7 @@
 .modal-body{
    height: 600px;
 }
+
+#adjust-text{
+    overflow: scroll;
+}
