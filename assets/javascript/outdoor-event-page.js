@@ -73,6 +73,8 @@ $(document).ready(function () {
     var isFirst = true;
     function displaySearch() {
 
+
+
         var oArgs = {
 
             app_key: 'PrJ2Sw3S8JHpBf9V',
