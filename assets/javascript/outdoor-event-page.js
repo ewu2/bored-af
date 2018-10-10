@@ -1,6 +1,5 @@
 
 $(document).ready(function () {
-
     mapboxgl.accessToken = 'pk.eyJ1IjoiZ29uemFsb24zMTQwIiwiYSI6ImNqbW53b2RsMDBmN3YzcHFvemVqMjcwMWgifQ.uSJyJkrDOWjV8xfUcaREtA';
 
     var map = new mapboxgl.Map({
@@ -61,6 +60,7 @@ $(document).ready(function () {
     }
 
     $(document).on('click', '#show-map', function () {
+
         $('.modal').fadeIn(500);
         $('.modal').modal('show');
         console.log('test');
@@ -81,7 +81,7 @@ $(document).ready(function () {
 
             q: localStorage.getItem('Selection'),
 
-            where: "San Diego",
+            where: localStorage.getItem('Location'),
 
             "date": "Today",
 
@@ -148,17 +148,22 @@ $(document).ready(function () {
                 newA.addClass('btn');
                 newA.addClass('btn-primary');
                 newA.attr('href', oData.events.event[i].url);
+                newA.attr('target', '_blank');
                 newA.text("Click for more Info");
+
 
                 newButton = $('<button>');
                 newButton.attr('id', 'show-map');
                 newButton.addClass('btn');
                 newButton.addClass('btn-dark');
                 newButton.text('Get Directions');
+                newButton.attr('latitude', oData.events.event[i].latitude);
+                newButton.attr('longitude', oData.events.event[i].longitude);
 
                 cardBody.append(newP);
                 cardBody.append(newA);
                 cardBody.append(newButton);
+
                 eventCount++;
 
 
