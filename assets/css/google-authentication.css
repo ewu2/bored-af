@@ -5,5 +5,10 @@ body {
 h1 {
     color: white;
     margin-top: 15%;
+}
+
+p {
+    color: whitesmoke;
+    font-style: italic;
     margin-bottom: 70px;
 }
