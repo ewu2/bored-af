@@ -67,7 +67,108 @@ $(document).ready(function () {
     })
 
 
+    displaySearch();
+    var rowCount = 0;
+    var eventCount = 0;
+    var isFirst = true;
+    function displaySearch() {
 
+        var oArgs = {
+
+            app_key: 'PrJ2Sw3S8JHpBf9V',
+
+            q: localStorage.getItem('Selection'),
+
+            where: "San Diego",
+
+            "date": "Today",
+
+            page_size: 50,
+
+            sort_order: "popularity",
+
+        };
+
+        EVDB.API.call("/events/search", oArgs, function (oData) {
+            console.log(oData);
+            for (var i = 0; i < oData.events.event.length; i++) {
+
+                if (isFirst) {
+                    rowCount++;
+                    //create first row
+                    var newRow = $("<div>");
+                    newRow.addClass('row');
+                    newRow.addClass('row-' + rowCount);
+                    $('#show-page').append(newRow);
+
+                    isFirst = false;
+                }
+
+
+                var newEvent = $('<div>');
+                newEvent.addClass('col-md-4');
+
+                $('.row-' + rowCount).append(newEvent);
+
+                var newCard = $('<div>');
+                newCard.addClass('card');
+
+                newEvent.append(newCard);
+
+                var cardTitle = $('<h5>');
+                cardTitle.addClass('card-title');
+                cardTitle.text(oData.events.event[i].title);
+
+                var newImage = $('<img>');
+                newImage.addClass('card-img-top');
+                newImage.attr('src', 'assets/images/orurorororo.jpg');
+
+                var cardBody = $('<div>');
+                cardBody.addClass('card-body');
+                cardBody.attr('id', 'adjust-text');
+
+                newCard.append(cardTitle);
+
+                newCard.append(newImage);
+
+                newCard.append(cardBody);
+
+                newP = $('<p>');
+                newP.addClass('card-text');
+
+                newP.text(oData.events.event[i].description);
+
+
+
+
+
+                newA = $('<a>');
+                newA.addClass('btn');
+                newA.addClass('btn-primary');
+                newA.attr('href', oData.events.event[i].url);
+                newA.text("Click for more Info");
+
+                newButton = $('<button>');
+                newButton.attr('id', 'show-map');
+                newButton.addClass('btn');
+                newButton.addClass('btn-dark');
+                newButton.text('Get Directions');
+
+                cardBody.append(newP);
+                cardBody.append(newA);
+                cardBody.append(newButton);
+                eventCount++;
+
+
+                if (eventCount >= 3) {
+                    isFirst = true;
+                    eventCount = 0;
+                }
+            }
+
+        });
+
+    }
 
 
 
