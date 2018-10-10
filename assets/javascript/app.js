@@ -14,12 +14,12 @@ $(document).ready(function () {
     $('.indoor-choice-box').fadeIn(3000);
 
     //fading in elements of indoor page
-    $('.box-1').fadeIn(2000);
+    $('.box-1').fadeIn(1000);
     $('.box-2').fadeIn(2000);
-    $('.box-3').fadeIn(2000);
-    $('.box-4').fadeIn(2000);
+    $('.box-3').fadeIn(3000);
+    $('.box-4').fadeIn(3000);
     $('.box-5').fadeIn(2000);
-    $('.box-6').fadeIn(2000);
+    $('.box-6').fadeIn(1000);
 
     //fading in elements of outdoor page
     $('.in-box-1').fadeIn(3000);
