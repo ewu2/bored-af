@@ -49,7 +49,7 @@ h1 {
     color: #fff;
     background: none;
     font-size: 30px;
-    transition-delay: .1s;
+    transition-delay: .05s;
 }
 
 .display-3 {
@@ -187,12 +187,12 @@ h1 {
 
 .fas-in:hover {
     color: #b8b4b2;
-    transition-delay: .1s;
+    transition-delay: .05s;
 }
 
 .fas-out:hover {
     color: rgba(0, 0, 0, 0.74);
-    transition-delay: .1s;
+    transition-delay: .05s;
 }
 
 .row-2 {
