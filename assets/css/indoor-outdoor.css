@@ -36,11 +36,14 @@
     text-align: center;
 }
 
+
 .fas,
 .fab {
     padding: 10px;
     font-size: 75px;
     color: white;
+    -webkit-transition: color .7s; /* For Safari 3.0 to 6.0 */
+    transition: color .7s; /* For modern browsers */
 }
 
 .fas-in:hover {
