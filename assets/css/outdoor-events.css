@@ -1,28 +1,22 @@
-/* Page 4 css */
-#container-4{
-    margin: auto;
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 450px;
+    height:550px;
+   
 }
-.card{
-    height: 400px;
-    width:200px;
-    background-color: grey;
-    margin: 10px 10px 20px 20px;
-
-}
-.primary{
-    margin: 20px 30px 10px 10px;
+.modal-body{
+   height: 600px;
 }
 
-#page-4{
-    margin: 10px 10px 5px 5px;
+#adjust-text{
+    overflow: scroll;
 }
-.btn-lg{
-    margin-left: 40%;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    text-align: center;
+#show-map{
+    margin-top: 10px;
 }
-.card-text{
-    margin: auto;
-
+body{
+    background:
+    rgba(177, 172, 172, 0.89);
 }

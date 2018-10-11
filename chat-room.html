@@ -16,19 +16,22 @@
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
 
-    <!-- Added link to CSS Style-->
+
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/indoor-outdoor.css">
-
+    <link rel="stylesheet" type="text/css" href="assets/css/choice.css">
+    <link rel="stylesheet" href="./assets/css/chat-room.css">
     <!-- Added link to Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
-
+    <script src="./assets/javascript/chat-room.js"></script>
 </head>
 
 <body>
-    <div class="jumbotron text-center main-header in-header">
+    <div class="jumbotron text-center main-header">
         <ul class="nav justify-content-end">
             <li class="nav-item">
                 <a class="nav-link" href="bored-button-page.html">Home</a>
@@ -44,50 +47,35 @@
             </li>
         </ul>
 
-        <a class="far fa-arrow-alt-circle-left backarrow" href="category-choice-page.html"></a>
+        <a class="far fa-arrow-alt-circle-left backarrow" href="./indoor-page.html"></a>
         <a class="title-link" href="bored-button-page.html">
             <h1 class="display-3">bored.af</h1>
         </a>
-    </div>
 
-    <div class="in-container">
-        <div class="row row-1">
-            <div class="col in-col">
-                <a href="indoor-events-page.html">
-                    <div class="box in-box-1">
-                        <i class="fas fa-tv fas-in"></i>
-                    </div>
-                </a>
+
+    </div>
+    <div class="container">
+        <div class='card'>
+            <div class="card-header">
+                <h2>Anonymous Chat Room</h2>
             </div>
-            <div class="col in-col">
-                <a href="chat-room.html">
-                    <div class="box in-box-2">
-                        <i class="fas fa-comments fas-in"></i>
-                    </div>
-                </a>
+            <div class="card-body">
+
             </div>
-            <div class="col in-col">
-                <a href="indoor-events-page.html">
-                    <div class="box in-box-3">
-                        <i class="fas fa-book-open fas-in"></i>
+            <div class="card-footer">
+                <form>
+                    <div class="form-group">
+
+                        <input id="message" type="text" class="form-control" placeholder="Don't be shy! Send a message to see other people's messages">
+                        <button id="send-message" class="btn btn-primary btn-dark">Send</button>
                     </div>
-                </a>
+                </form>
             </div>
         </div>
-
-
-        <!-- search bar -->
-        <!-- <div class="input-group input-group-sm search-bar">
-                <input type="text" class="form-control" placeholder="Didn't find what you were looking for? Try searching here. No promises dough. Unless... Do you wanna build a snowman?" aria-label="" aria-describedby="basic-addon1">
-                    <div class="input-group-append">
-                        <button class="btn btn-dark search-btn" type="button">I'm still bored.</button>
-                    </div>
-        </div> -->
-
     </div>
 
-    <!-- Added link to Javascript-->
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+
 </body>
 
 </html>

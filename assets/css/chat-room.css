@@ -1,0 +1,33 @@
+body{
+    text-align: center;
+    background: rgba(0, 0, 0, 0.74);
+}
+#send-message{
+    margin-top: 10px;
+    float:left;
+}
+.card-body{
+    overflow: scroll;
+    text-align: left;
+    height: 400px;
+}
+#chat-messages{
+    margin-top: 5px;
+    margin-left: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background: gray;
+    color: black;
+    font-weight: bold;
+    padding: 7px;
+
+}
+#user-name{
+    border: 2px solid black;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
+    background:rgba(0, 0, 0, 0.89);
+    text-align:center;
+    color: #fff;
+}
