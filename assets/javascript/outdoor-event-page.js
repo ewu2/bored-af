@@ -153,15 +153,6 @@ $(document).ready(function () {
 
                 newCard.append(cardBody);
 
-                newP = $('<p>');
-                newP.addClass('card-text');
-
-                newP.text(oData.events.event[i].description);
-
-
-
-
-
                 newA = $('<a>');
                 newA.addClass('btn');
                 newA.addClass('btn-primary');
@@ -178,8 +169,10 @@ $(document).ready(function () {
                 newButton.attr('latitude', oData.events.event[i].latitude);
                 newButton.attr('longitude', oData.events.event[i].longitude);
 
-                cardBody.append(newP);
+                cardBody.append(oData.events.event[i].description);
+                cardBody.append('<br>');
                 cardBody.append(newA);
+                cardBody.append('<br>');
                 cardBody.append(newButton);
 
                 eventCount++;
