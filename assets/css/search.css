@@ -1,4 +1,9 @@
 /* search page */
 .input-form {
     display: none;
+    padding: 50px;
+}
+
+.location-label {
+    margin-top: 30px;
 }

@@ -29,8 +29,5 @@ $(document).ready(function () {
     //fade in search bar
     $('.form-control').fadeIn(3000);
     $('.search-btn').fadeIn(3000);
-
-
-
-    
+        
 })

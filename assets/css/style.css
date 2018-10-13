@@ -6,17 +6,32 @@
 /* nav bar and header area */
 .main-header {
     background-color: rgba(0, 0, 0, 0.89);
+    margin-bottom: 0;
     padding-top: 10px;
+    padding-bottom: 90px;
     border-radius: 0;
+    width: 100%;
 }
 
 h1 {
     color: white;
 }
 
+nav {
+    background-color: rgba(0, 0, 0, 0.89);
+}
+
+.navbar-nav {
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
 .nav-link {
     color: #b8b4b2;
     margin: 0;
+    -webkit-transition: color .7s; /* For Safari 3.0 to 6.0 */
+    transition: color .7s; /* For modern browsers */
 }
 
 .nav-link:hover {
@@ -32,6 +47,8 @@ h1 {
 .backarrow {
     float: left;
     color: #fff;
+    padding-top: 5px;
+    padding-left: 15px;
     background: none;
     font-size: 30px;
     -webkit-transition: color .7s; /* For Safari 3.0 to 6.0 */

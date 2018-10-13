@@ -1,7 +1,23 @@
 body{
     text-align: center;
-    background: rgba(0, 0, 0, 0.74);
 }
+
+.chat-box {
+    padding: 80px;
+    padding-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.74);
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-header {
+    background-color: rgba(0, 0, 0, 0.89);
+    color: whitesmoke;
+}
+
 #send-message{
     margin-top: 10px;
     float:left;
@@ -14,7 +30,7 @@ body{
 #chat-messages{
     margin-top: 5px;
     margin-left: 10px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     border-radius: 10px;
     background: gray;
     color: black;
