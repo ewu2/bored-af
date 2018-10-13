@@ -34,3 +34,16 @@
     font-style: italic;
     margin-top: 20px;
 }
+
+@media screen and (max-width: 444px) {
+     
+    .outdoor-choice-box {
+        padding-right: 35px;
+        padding-left: 15px;
+    }
+
+    .indoor-choice-box {
+        padding-right: 15px;
+        padding-left: 35px;
+    }
+}
